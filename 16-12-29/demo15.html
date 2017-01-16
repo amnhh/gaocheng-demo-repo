@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <button type="button" id="myBtn" name="button">点我</button>
+    </body>
+    <script type="text/javascript">
+        var $btn = document.getElementById('myBtn');
+        $btn.addEventListener('click', function (e) {
+            console.log('我在目标阶段, 我的状态是 : ' + e.eventPhase); // 2
+        }, false);
+        // 在捕获阶段搞一发
+        document.body.addEventListener('click', function (e) {
+            console.log('我在捕获, 我的状态是 : ' + e.eventPhase); // 1
+        }, true);
+        // 在冒泡阶段再搞一发
+        document.body.addEventListener('click', function (e) {
+            console.log('我在冒泡, 我的状态是 : ' + e.eventPhase);
+        }, false);
+    </script>
+</html>

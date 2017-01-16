@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2</title>
+</head>
+<body>
+  <!-- 利用 length 属性可以很方便的在数组的末尾追加项 -->
+  <script>
+    var arr = [];
+
+    for (var i = 0; i < 10; i ++) {
+      arr.push(i);
+    }
+
+    console.log(arr); // [0, 1, 2, ..., 9]
+
+    arr[arr.length] = 'anning';
+    arr[arr.length] = 'amnhh';
+
+    console.log(arr); // [0, 1, 2, ..., 9, 'anning', 'amnhh'] => 后面被追加了两项
+
+    // 因为 array.length 始终会返回这个数组的长度, 而这个数组的最后一项永远是 length - 1, 所以 length 就会在末尾追加
+    // 在你给 arr 追加了一项之后, arr 的 length 属性会立刻得到更新, 所以通过 arr[arr.length] 给数组追加的操作可以连续进行
+    // for (;;) {arr[arr.length] = 1; //......}
+    // 可以像上面那样写
+  </script>
+</body>
+</html>

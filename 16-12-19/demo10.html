@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <img src="again1" alt="sss" />
+        <img src="again2" alt="bbb" />
+        <img src="again1" alt="sss" />
+        <img src="again2" alt="bbb" />
+        <img src="again1" alt="sss" />
+        <img src="again2" alt="bbb" />
+        <img src="again1" alt="sss" />
+        <img src="again2" alt="bbb" />
+    </body>
+    <script type="text/javascript">
+        var imgCollection = document.images;
+        console.log(imgCollection); // image Collection
+        // 虽然作用相同, 但是他们两个是不同的对象, 索引不同
+        console.log(imgCollection === document.getElementsByTagName('img'))
+    </script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4.2.2</title>
+</head>
+<body>
+  <!-- 没有块级作用域 -->
+
+  <script>
+    if (true) {
+      var color = 'blue';
+    }
+    console.log(color); // blue => color 的定义跳出了 if 括号
+  </script>
+
+  <!-- 所以就会造成的一个后果就是, 在 for 循环了之后, 循环标示 i 还是会有值, 还是会存在于循环外部的执行环境中 -->
+  
+</body>
+</html>

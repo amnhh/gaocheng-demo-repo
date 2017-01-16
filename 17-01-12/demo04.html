@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function createXHR () {
+      if (typeof XMLHttpRequest !== 'undefined') {
+        return new XMLHttpRequest();
+      } else if (typeof arguments.callee.activeXString !== 'string') {
+        var versions = ["MXSML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"];
+        var i, len;
+
+        for (i = 0, len = versions.length; i < len; i ++) {
+          try {
+            new ActiveXObject(versions[i]);
+            arguments.callee.activeXString = version[i];
+            break;
+          } catch (e) {
+            // 跳过
+          }
+        }
+      } else {
+        console.log('不支持')
+      }  
+    }
+  </script>
+</body>
+</html>

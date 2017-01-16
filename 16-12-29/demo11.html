@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>13.3</title>
+    </head>
+    <body>
+        <button type="button" id="myBtn" name="button">点我</button>
+    </body>
+    <script type="text/javascript">
+        var $btn = document.getElementById('myBtn');
+        $btn.addEventListener('click', function (e) {
+            console.log(e);
+            console.log(e.target); // => 包含事件的实际目标
+            console.log(this); // => 指向被绑定的那个元素
+            console.log(e.currentTarget); // => 事件处理程序当前正在处理的那个目标
+        });
+        // 貌似 currentTarget 是和 this 最切实的一个了
+        // 但是像这种直接指定的话, 是不会有问题的, this、target、currentTarget 三个一模一样
+    </script>
+</html>

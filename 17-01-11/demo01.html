@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2</title>
+</head>
+<body>
+  <!-- 数组的 length 属性很有意思的就是, 并不是一个只读属性 -->
+  <!-- 我们可以通过为 length 属性赋值, 从数组的末尾添加项或者移除项 -->
+
+  <script>
+    var arr = [];
+    
+    for (var i = 0; i < 10; i ++) {
+      arr.push(i);
+    }
+
+    console.log(arr); // [0, 1, 2, 3, ..., 9]
+    
+    arr.length = 20;
+    console.log(arr); // [0, 1, 2, 3, ..., 9] => 后面跟了十个 undefined
+
+    arr.length = 1;
+    console.log(arr); // [0] => 只有一个 0, 通过对 length 赋值为 1, 把这个数组截断了
+  </script>
+</body>
+</html>

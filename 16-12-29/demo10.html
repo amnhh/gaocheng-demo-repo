@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>13.3</title>
+    </head>
+    <body>
+        <button type="button" name="button" id="myBtn">点我</button>
+    </body>
+    <script type="text/javascript">
+        var $btn = document.getElementById('myBtn');
+        $btn.onclick = function (e) {
+            console.log(e.type);
+        };
+        $btn.addEventListener('click', function (e) {
+            console.log(e.type);
+            console.log(e);
+        });
+        // 打印出了两次 click, 都取到了 event 对象
+    </script>
+</html>

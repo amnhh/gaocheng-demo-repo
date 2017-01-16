@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2.1</title>
+</head>
+<body>
+   <!-- 那么问题来了。。有个经典的问题 -->
+   <!-- 如何检测一个东西是不是一个数组 ? -->
+   <script>
+      // instanceof 
+      var arr = [];
+
+      function doSth () {};
+
+      arr instanceof Array && doSth();
+
+      // 这个方法的弊端就是, 如果页面中包含多个全局环境, 也就是包含多个框架, 而 instanceof 方法是依据构造函数来判断的
+      // 所以全局环境多的话, 就会有问题, 因为构造函数不是一样的构造函数
+      // 所以 es5 推出了一个全新的检测函数
+
+      // isArray
+      Array.isArray(arr) && doSth();
+      // 貌似。。这个方法我只觉得需要注意一点。。 就是这个方法挂在构造函数上的而不是 Array.prototype 上的。。其他没啥了
+   </script>
+</body>
+</html>

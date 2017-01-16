@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4.1.3</title>
+</head>
+<body>
+<!-- 所有函数的参数都按值传递 -->
+<!-- 基本类型值的传递如同基本类型变量的复制, 引用类型值的传递, 则如同与引用类型变量的复制一样 -->
+<!-- 访问变量有按值和按引用两种方式, 但是参数只能按值传递 -->
+
+<!-- 在向参数传递基本类型的值的时候, 被传递的值会被复制给一个局部变量(arguments 对象中的一个元素) -->
+<!-- 在向参数传递引用类型的值的时候, 会把这个值在内存中的地址复制一份给一个局部变量, 所以这个局部变量的变化会反应在函数的外部 -->
+
+<script>
+    function addTen (num) {
+        num += 10;
+        return num;
+    }
+
+    var count = 20;
+
+    var result = addTen(count);
+    console.log(count); // 20
+    console.log(result); // 30
+    // 这里就可以看的出哎, 只是把 count 的值复制了一份给 arguments[0], 而不是直接把 count 丢进去, 内部执行的时候其实作用的就是这个 arguments[0], 也就是 num
+</script>
+
+<script>
+    function setName (obj) {
+        // person 的调用情况下
+        // 这个时候 obj 还指向的是 person 在内存中的地址, 所以这里的修改对 person 是有效的
+        obj.name = 'amnhh';
+        // 这里的时候 obj 就已经不指向 person 了
+        obj = new Object();
+        // 所以这里的修改根本就改不到 person 上面
+        obj.name = 'grey';
+    }
+
+    var person = new Object();
+    setName(person);
+
+    console.log(person.name); // 'amnhh'
+</script>
+</body>
+</html>

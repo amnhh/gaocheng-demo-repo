@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4.1.1</title>
+</head>
+<body>
+<script>
+
+    // 给一个引用类型的方法或者属性赋值, 可以实现
+
+
+    var person = new Object();
+
+    person.name = 'amnhh';
+
+    console.log(person.name); // amnhh
+
+
+    // 当你尝试给一个基本类型的值添加属性, 不会报错, 但是不会有任何的作用
+    var _person = 'amnhh';
+
+    _person.age = 22;
+
+    console.log(_person.age); // undefined;
+
+    // 原理 :
+    // 暂时理解就是, 你在给他赋值的时候, 他会在那一条语句运行的时候调用他的包装类型, 比如这里就是调用了 String('...'), 然后在这个临时对象上面添加了一个 age 的属性
+    // 但是这个临时对象在这一行语句运行结束之后就会被销毁, 所以赋值会成功
+    // 但是在赋值之后实际上没有挂在这个基本类型上, 而是挂在了那个临时对象上, 也跟随者临时对象的销毁而销毁了
+</script>
+</body>
+</html>

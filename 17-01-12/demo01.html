@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>20.2.2</title>
+</head>
+<body>
+  <!-- JSON.stringify(obj, filter, indent) -->
+  <script>
+    var book = {
+      name : 'anning',
+      author : 'anning',
+      publish : 2017,
+      edition : 3
+    };
+
+    console.log(JSON.stringify(book, ['author', 'publish'], true)); // {"author":"anning","publish":2017}
+    console.log(JSON.stringify(book, null, true)); // 保留了缩进... 但是貌似浏览器里面 console.log 看不出来 ??
+  </script>
+
+</body>
+</html>

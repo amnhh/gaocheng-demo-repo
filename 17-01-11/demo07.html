@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2.4</title>
+</head>
+<body>
+  <!-- js 的数组同时也可以进行模拟队列操作 -->
+  <!-- 队列数据结构的访问规则是 first in first out, 先进先出 -->
+  <!-- array 也提供了 shift 和 unshift 两种方式来进行队列操作 -->
+  <script>
+    var arr = [];
+
+    for (var i = 0; i < 10; i ++, arr.push(i)) {}
+
+    console.log(arr.toString()); // 1,2,3,4,5,6,7,8,9,10
+
+    arr.unshift(11);
+    console.log(arr.toString()); // 11,1,2,3,4,5,6,7,8,9,10
+
+    arr.shift();
+    console.log(arr.toString()); // 1,2,3,4,5,6,7,8,9,10
+  </script>
+</body>
+</html>

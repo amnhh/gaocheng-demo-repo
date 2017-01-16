@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2.2</title>
+</head>
+<body>
+  <!-- 每个对象都具有 toLocaleString, toString, valueOf 方法 -->
+  <!-- 数组调用 toString 方法实际上就是把每个值以字符串的形式拼接成一个以逗号分隔的字符串 -->
+  <script>
+    var arr = [];
+
+    for (var i = 0; i < 10; i ++) {
+      arr.push(i);
+    }
+    console.log(arr.toString()); // 0,1,2,3,4,5,6,7,8,9
+
+    // 为了创建这个以逗号分隔的字符串, 会为每一项都调用一遍 toString 方法
+    arr[arr.length] = {1 : 1};
+    console.log(arr.toString()); // 0,1,2,3,4,5,6,7,8,9,[object Object]
+
+    // 调用 valueOf 方法返回的还是数组
+    console.log(arr.valueOf()); // [0, 1, 2, ..., 9]
+
+    console.log(arr.toLocaleString()); // 0,1,2,3,4,5,6,7,8,9,[object Object]
+  </script>
+</body>
+</html>

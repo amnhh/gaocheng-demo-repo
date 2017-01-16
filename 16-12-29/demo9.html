@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>13.2</title>
+    </head>
+    <body>
+        <button type="button" name="button" id="myBtn">点我</button>
+        <script type="text/javascript">
+            var EventUtil = function () {};
+            var proto = EventUtil.prototype;
+            proto.addEvent = function (ele, type, fn) {
+                if (ele.addEventListener) {
+                    ele.addEventListener(type, fn, false);
+                } else if (ele.attachEvent) {
+                    ele.attachEvent('on' + type, fn);
+                } else {
+                    ele['on' + type] = fn;
+                }
+            };
+
+            proto.removeEvent = function (ele, type, fn) {
+                if (ele.removeEventListener) {
+                    ele.removeEventListener(type, fn, false);
+                } else if (ele.attachEvent) {
+                    ele.attachEvent('on' + type, fn);
+                } else {
+                    ele['on' + type] = null;
+                }
+            };
+
+            var $btn = document.getElementById('myBtn');
+            var eventutil = new EventUtil;
+            eventutil.addEvent($btn, 'click', function () {
+                console.log('ohehe');
+            });
+        </script>
+    </body>
+</html>

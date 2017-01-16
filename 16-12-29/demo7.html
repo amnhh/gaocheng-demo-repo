@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <button type="button" name="button" id="myBtn">点我</button>
+    </body>
+    <script type="text/javascript">
+        document.body.addEventListener('click', function () {
+            console.log('body 被点击了');
+        }, true);
+        var $btn = document.getElementById('myBtn');
+        $btn.addEventListener('click', function () {
+            console.log('btn 被点击了');
+        }, true);
+    </script>
+</html>

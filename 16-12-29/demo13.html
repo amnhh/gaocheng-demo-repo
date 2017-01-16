@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>13.3</title>
+    </head>
+    <body>
+        <a href="www.baidu.com">点我</a>
+    </body>
+    <script type="text/javascript">
+        var $aLink = document.getElementsByTagName('a')[0];
+        $aLink.onclick = function (e) {
+            e.preventDefault();
+        };
+        // 果然跳不走了。。。
+    </script>
+</html>

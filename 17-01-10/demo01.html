@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4.2.2.1</title>
+</head>
+<body>
+  <script>
+    function add (a, b) {
+      var sum = a + b;
+      return sum;
+    }
+    console.log(add(1, 2)); // 3
+    console.log(sum); // 报错, 因为在这个作用域里面访问不到他内部函数里面的变量
+  </script>
+  <script>
+    function add (a, b) {
+      sum = a + b;
+      return sum;
+    }
+
+    console.log(add(1, 2)); // 3
+    console.log(sum); // 3
+    // 这里就可以看得出来, 因为没有 var 而被添加到全局的变量, 与直接在顶层命名空间中用 var 定义的有点不一样的就是
+    // 没有用 var 而被挂在 window 上的变量, 可以通过delete window.xxx 来进行删除, 而在顶层空间里面 var 出来的是不可以 delete 的
+    console.log(delete window.sum); // true
+    console.log(sum); // 报错
+  </script>
+  <!-- 不声明而直接初始化变量是一个常见的错误, 可能会导致意外 -->
+</body>
+</html>

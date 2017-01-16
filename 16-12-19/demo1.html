@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var _html = document.documentElement;
+            console.log(_html);
+            // 因为 document.childNodes[0] 为 <!doctype>, firstChild 也是同理
+            console.log(_html === document.childNodes[1]);
+            console.log(_html === document.firstChild)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>13.3</title>
+    </head>
+    <body>
+        <button type="button" id="myBtn" name="button">点我</button>
+    </body>
+    <script type="text/javascript">
+        document.body.onclick = function (e) {
+            console.log(e.target); // btn
+            console.log(e.currentTarget); // body
+            console.log(this); // body
+        };
+        // 这种, 如果事件处理函数是绑定在触发元素的父元素上的, 那么 currentTarget 会指向这个父元素, 但是 target 代表最终的那个叼东西, 所以会指向触发的那个元素
+    </script>
+</html>

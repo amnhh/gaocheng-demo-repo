@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4.1.4</title>
+</head>
+<body>
+  <!-- 在检测引用类型的时候, typeof 的类型不大 -->
+  <!-- 通常我们想知道的不是这个东西是个对象, 而是这个东西具体是个什么类型的对象 -->
+  <!-- 所以 js 提供了 instanceof 操作符 -->
+  <script>
+    var person;
+    console.log(person instanceof Object); // false, 因为这个时候 person 是 undefined
+
+
+    person = {};
+    console.log(person instanceof Object); // true, 这个时候我们给他手动赋值为一个 Object
+
+    person = [];
+    console.log(person instanceof Array); // true, 我们手动给他赋值为了一个 Array
+    console.log(person instanceof Object); // true, 这里就牵引除了另一个话题, 所有引用类型都是 Object 的实例, 所以一个引用类型 instanceof Object 都会返回 true
+
+    // 也能看的出来另一个东西... 所有基本类型 instanceof xxx 任何东西都会返回 false, 因为基本类型的不是对象
+    console.log(' ' instanceof String); // false, 因为 ' ' 不是一个对象
+    console.log(String(' ') instanceof String); // false, 因为 String(' ') 的返回结果是 '', 只是调用了他的构造函数把他转换成了 String
+
+    // 我们再来尝试一种实例化的
+    console.log((new String('')) instanceof String); // true, 因为这个时候 new String(' ') 是生成了一个 String 的实例, 是一个对象, 所以 instanceof 有效, 而且也确实符合, 所以会返回 true
+  </script>
+</body>
+</html>

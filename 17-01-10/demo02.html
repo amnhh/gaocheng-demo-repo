@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.1</title>
+</head>
+<body>
+  <!-- 一个对象的 key 一定是一个字符串 -->
+  <!-- 就算是你在初始化的时候写的 {2 : 1}, 这种在真正生成的时候也一定会把 2 转换为字符串存储 -->
+  <!-- 我们在 obj[123] 的时候, 也会统一把 123 转化为 '123' 然后再去进行查询 -->
+  <!-- 这也就是我们平时数组去重, 用 obj map 的方式会有局限性的原因, [1, '1'] 会只留下一个 1 -->
+  <script>
+    function unique (arr) {
+      if (!Array.isArray(arr)) return;
+      var ret = [], i, l, val, hash = {};
+      for (i = 0, l = arr.length; i < l; i ++) {
+        val = arr[i];
+        if (!hash[val]) {
+          hash[val] = 'amnhh';
+          ret.push(val);
+        }
+      }
+      return ret;
+    }
+    console.log(unique([1, 2, 3, 1, 5, 5, '1'])); // [1, 2, 3, 5]
+    console.log(unique([1, 2, 3, 1, 5, 5])); // [1, 2, 3, 5]
+
+    // 这就是 hash map 的方法的局限性了... 随手写的.. 略丑
+  </script>
+</body>
+</html>

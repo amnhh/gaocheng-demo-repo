@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="again" id="myDiv" lang="zh-hans" dir="ltr" name="again" title="again"></div>
+    </body>
+    <script type="text/javascript">
+        var $div = document.getElementById('myDiv');
+        function outputAttributes (ele) {
+            var ret = [];
+            for (var i = 0, len = ele.attributes.length; i < len; i ++) {
+                var attr = ele.attributes[i];
+                ret.push(attr.nodeName + '="' + attr.nodeValue + '"');
+            }
+            ret = ret.join('  ');
+            return ret;
+        }
+        console.log(outputAttributes($div)); // class="again"  id="myDiv"  lang="zh-hans"  dir="ltr"  name="again"  title="again"
+    </script>
+</html>

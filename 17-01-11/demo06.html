@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2.3</title>
+</head>
+<body>
+  <!-- 栈是一种后进先出的数据结构, last in first out => 吃进去, 吐出来的数据结构 -->
+  <!-- js 的 array 可以模拟栈, 而 push 和 pop 就刚好是推入和弹出的方法 -->
+  <script>
+    var arr = [];
+
+    for (var i = 0; i < 10; i ++) {
+      arr.push(i);
+    }
+
+    console.log(arr.toString()); // 0,1,2,3,4,5,6,7,8,9
+
+    arr.push(15);
+    console.log(arr.toString()); // 0,1,2,3,4,5,6,7,8,9,15
+
+    arr.pop();
+    console.log(arr.toString()); // 0,1,2,3,4,5,6,7,8,9
+  </script>
+</body>
+</html>

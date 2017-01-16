@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.1</title>
+</head>
+<body>
+  <!-- 一般来说, 访问属性的时候都是使用点表示法, 但是 js 里面支持使用方括号表示法, 类似这种 -->
+  <script>
+    var obj = {anning : 1};
+    console.log(obj.anning); // 1
+    console.log(obj['anning']); // 1
+  </script>
+  <!-- 方括号表示法比较不一样的地方就是, 可以通过变量来访问属性 -->
+  <script>
+    var obj = {anning : 1};
+    var an = 'anning';
+    console.log(obj[an]); // 1 => 这里正常取到了属性
+    console.log(obj.an); // undefined => 这里给给了。。。
+  </script>
+  <!-- 所以在我眼里, 规则的属性名一般用点号来取, 需要各种拼装或者是各种变量组合的话, 使用方括号表示法 -->
+</body>
+</html>

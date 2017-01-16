@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>13.3</title>
+    </head>
+    <body>
+        <button type="button" id="myBtn" name="button">点我</button>
+    </body>
+    <script type="text/javascript">
+        function EventUtil () {};
+        var proto = EventUtil.prototype;
+
+        proto.getEvent = function (event) {
+            return event ? event : window.event;
+        };
+
+        proto.getTarget = function (event) {
+            return event.target || event.srcElement;
+        };
+
+        proto.preventDefault = function (event) {
+            event.preventDefault ? event.preventDefault() : event.returnValue = false;
+        };
+
+        proto.stopPropagation = function (event) {
+            event.stopPropagation ? event.stopPropagation() : event.cancelBubble = true;
+        };
+
+
+        var $btn = document.getElementById('myBtn');
+
+        var eventutil = new EventUtil();
+        $btn.onclick = function (e) {
+            e = eventutil.getEvent(e);
+            eventutil.stopPropagation(e);
+            console.log('我是btn, 我被点击了');
+        };
+        document.body.onclick = function () {
+            console.log('我是body, 我被点击了');
+            console.log('咯咯咯');
+        };
+
+    </script>
+</html>

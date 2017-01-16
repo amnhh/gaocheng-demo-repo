@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>20.2.2.3</title>
+</head>
+<body>
+  <!-- JSON.stringify(obj, filter, indent) -->
+  <script>
+    var book = {
+      "name" : 'anning',
+      "author" : 'anning',
+      "publish" : 2017,
+      "edition" : 3
+    };
+
+    var json = JSON.stringify(book);
+
+    var $obj = JSON.parse(json, function (key, value) {
+      if (key == 'name') {
+        return 'amnhh';
+      } else if (key === 'author') {
+        return undefined;
+      } else {
+        return value;
+      }
+    });
+
+    console.log($obj); // {name: "amnhh", publish: 2017, edition: 3} => 变了 name, 删除了 author
+  </script>
+</body>
+</html>

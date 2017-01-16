@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>20.2.2.3</title>
+</head>
+<body>
+  <!-- JSON.stringify(obj, filter, indent) -->
+  <script>
+    var book = {
+      name : 'anning',
+      author : 'anning',
+      publish : 2017,
+      edition : 3,
+      toJSON : function () {
+        return this.author;
+      }
+    };
+
+    console.log(JSON.stringify(book)); // 不会序列化全部, 而只会调用 toJSON 方法
+    
+  </script>
+</body>
+</html>
