@@ -30,4 +30,4 @@ console.log(sub.getSuperValue());
 
 // 最后生成的层级关系大概就是 :
 
-// sub {subProperty : 2} => new SuperType {property : 1} => SuperType.prototype {getSuperValue : function ...}
+// sub {subProperty : 2} => new SuperType {property : 1} => SuperType.prototype {getSuperValue : function ...} => 最后继承到 Object 上
